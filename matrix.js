@@ -34,5 +34,26 @@ function printMatrixInSpiralOrder(arr) {
   return result;
 }
 
-var testMatrix = [[1,2,3], [8,9,4], [7,6,5]];
-console.log(printMatrixInSpiralOrder(testMatrix));
+// var testMatrix = [[1,2,3], [8,9,4], [7,6,5]];
+// console.log(printMatrixInSpiralOrder(testMatrix));
+
+function searchMatrix(matrix, target) {
+  var row = 0;
+  var col = matrix[0].length - 1;
+
+  while (row < matrix.length && col >= 0) {
+    console.log(row, col, matrix[row][col]);
+    var currentValue = matrix[row][col];
+    if (currentValue === target) {
+      return true;
+    } else if (currentValue < target) {
+      row++;
+    } else {
+      col--;
+    }
+  }
+  return false;
+}
+
+// var testMatrix = [[1,2,3], [2,4,5], [6,8,10]];
+// console.log(searchMatrix(testMatrix, 6));
